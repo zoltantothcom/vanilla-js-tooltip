@@ -6,20 +6,118 @@
     <title>Vanilla Javascript tooltip</title>
 
     <link rel="stylesheet" href="styles/vanilla-js-tooltip.css" />
+    <link rel="stylesheet" href="styles/prism.css" />
 </head>
 <body>
-    <div class="wrap">
-    <h1>Vanilla Javascript tooltip</h1>
+    <header>
+        <img src="images/vanilla-js-logo.jpg" alt="Vanilla JS">
 
-        <p>Narwhal swag seitan, fap vegan stumptown blue bottle irony tote bag wayfarers semiotics banh mi raw denim. Street art swag scenester bicycle rights. Distillery <span data-tooltip="Distillery squid authentic" data-position="right bottom">right bottom tooltip</span> authentic, meggings swag farm-to-table kinfolk. Schlitz blue bottle deep v, cronut banjo tattooed aesthetic migas. Bitters put a bird on it hammock microdosing, chambray locavore pickled umami. Poutine XOXO shoreditch synth heirloom. Hashtag neutra pop-up, scenester pour-over typewriter shabby chic godard try-hard.</p>
+        <h1>Vanilla Javascript tooltip</h1>
+    </header>
 
-        <p>Freegan affogato yr, <span data-tooltip="pinterest <b style='color: #c00'>gluten-free</b> forage street">top center with HTML</span> hammock etsy quinoa everyday carry skateboard shabby chic ugh mumblecore vinyl. Heirloom food truck mustache, hashtag chartreuse art party godard. Tacos bitters affogato taxidermy, brunch dreamcatcher offal raw denim cred forage. Fashion axe squid pickled, blue bottle kogi four loko portland. Butcher <span data-tooltip="<img src='http://lorempixel.com/150/100/' alt='' />" data-position="right top">image</span> umami, mixtape pinterest gluten-free forage street art taxidermy hella. Fap viral twee scenester shoreditch, messenger bag distillery meditation 90's 8-bit bicycle rights. Kale chips gluten-free hoodie, cronut helvetica keytar YOLO waistcoat beard brooklyn chillwave locavore tousled meggings.</p>
-    </div>
+    <section>
+        <h2>About</h2>
 
+        <p>Libraries such as jQuery, MooTools, Dojo and others are truly awesome and powerful, but sometimes it's completely unnecessary to load 100-200Kb of libraries and plugins for a simple thing, like a carousel, tooltip or accordion.</p>
+
+        <p>That's when the Vanilla Javascript series come in handy to save on page weight and decrease download times with one of the following:</p>
+
+        <ul>
+            <li><a href="//zoltantothcom.github.io/vanilla-js-carousel/" target="_blank">Carousel</a></li>
+            <li><a href="//zoltantothcom.github.io/vanilla-js-tooltip/" target="_blank">Tooltip</a></li>
+            <li><a href="//zoltantothcom.github.io/vanilla-js-select/" target="_blank">Select</a></li>
+            <li>Accordion (coming soon)</li>
+            <li>Tabs (coming soon)</li>
+        </ul>
+
+        <p class="smaller">&mdash; Inspired by the blazing fast, lightweight, cross-platform <a href="http://vanilla-js.com/" target="_blank">Vanilla JS</a> framework.</p>
+    </section>
+
+    <section>
+        <h2>Usage</h2>
+
+        <ol>
+            <li>
+                Set up a tooltip in your HTML
+                <pre><code class="language-markup">&lt;span data-tooltip="Lorem ipsum tooltip text">Lorem ipsum&lt;/span></code></pre>
+            </li>
+            <li>
+                <strong>Optional</strong> - Set the position of the tooltip
+                <pre><code class="language-markup">&lt;span data-tooltip="..." data-position="left top">Lorem ipsum&lt;/span></code></pre>
+
+                If the position is not defined the script defaults to <code>data-position="center top"</code> which positions the tooltip centered above the trigger. These are the possible values for <code>data-position</code>:
+
+                <table>
+                    <tr>
+                        <th>Value</th>
+                        <th>Position</th>
+                    </tr>
+                    <tr>
+                        <td><span class="tooltip" data-tooltip="Left top corner" data-position="left top">left top</span></td>
+                        <td>Left top corner</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tooltip" data-tooltip="Horizontally centered on top" data-position="center top">center top</span></td>
+                        <td>Horizontally centered on top</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tooltip" data-tooltip="Right top corner" data-position="right top">right top</span></td>
+                        <td>Right top corner</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tooltip" data-tooltip="Vertically centered on the right" data-position="right center">right center</span></td>
+                        <td>Vertically centered on the right</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tooltip" data-tooltip="Right bottom corner" data-position="right bottom">right bottom</span></td>
+                        <td>Right bottom corner</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tooltip" data-tooltip="Horizontally centered at the bottom" data-position="center bottom">center bottom</span></td>
+                        <td>Horizontally centered at the bottom</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tooltip" data-tooltip="Bottom left corner" data-position="left bottom">left bottom</span></td>
+                        <td>Bottom left corner</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tooltip" data-tooltip="Vertically centered on the left" data-position="left center">left center</span></td>
+                        <td>Vertically centered on the left</td>
+                    </tr>
+                </table>
+            </li>
+            <li>
+                Include the styles
+                <pre><code class="language-markup">&lt;link rel="stylesheet" href="vanilla-js-tooltip.css" /></code></pre>
+
+                and the script
+                <pre><code class="language-markup">&lt;script src="vanilla-js-tooltip.min.js">&lt;/script></code></pre>
+            </li>
+            <li>
+                Call it 
+                <pre><code class="language-javascript">var tooltip = new Tooltip({
+    theme: "light", // Selects one of the pre-defined tooltip styles - light or dark.
+    distance: 5,    // Specifies the distance in pixels from trigger to tooltip.
+    delay: 0        // Specifies how long the tooltip remains visible (in ms) after the mouse leaves the trigger.
+});</code></pre>
+            </li>
+        </ol>
+
+    </section>
+
+    <section>
+        <h2>Download</h2>
+
+        <p>Available at <a href="https://github.com/zoltantothcom/vanilla-js-tooltip">GitHub</a></p>
+    </section>
+
+    <script src="scripts/prism.js"></script>
     <script src="scripts/vanilla-js-tooltip.min.js"></script>
     <script>
         var tooltip = new Tooltip({
-            theme: "dark"
+            theme: "light",
+            distance: 5,
+            delay: 0
         });
     </script>
 </body>
