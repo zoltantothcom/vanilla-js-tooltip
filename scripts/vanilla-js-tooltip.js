@@ -59,6 +59,8 @@ Tooltip = function(options) {
     function positionAt(parent, tooltip, posHorizontal, posVertical) {
         var parentCoords = parent.getBoundingClientRect(), left, top;
 
+        console.log(posVertical)
+
         switch (posHorizontal) {
             case "left":
                 left = parseInt(parentCoords.left) - dist - tooltip.offsetWidth;
@@ -81,7 +83,7 @@ Tooltip = function(options) {
         
         switch (posVertical) {
             case "center":
-                top = parseInt(parentCoords.left) - dist - tooltip.offsetWidth;
+                top = (parseInt(parentCoords.top) + parseInt(parentCoords.bottom)) / 2 - tooltip.offsetHeight / 2;
                 break;
                 
             case "bottom":
@@ -90,9 +92,9 @@ Tooltip = function(options) {
 
             default:
             case "top":
-                top = parseInt(parentCoords.top) - pageYOffset - tooltip.offsetHeight - dist;
+                top = parseInt(parentCoords.top) - tooltip.offsetHeight - dist;
         }       
-        
+
         left = (left < 0) ? parseInt(parentCoords.left) : left;
         top  = (top < 0) ? parseInt(parentCoords.bottom) + dist : top;
 
