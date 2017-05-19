@@ -27,8 +27,9 @@ Tooltip = function(options) {
         if (!e.target.hasAttribute('data-tooltip')) return;
 
         var tooltip = document.createElement("div");
-        tooltip.className = "b-tooltip " + "b-tooltip-" + theme;
+        tooltip.className = "js-Tooltip";
         tooltip.innerHTML = e.target.getAttribute('data-tooltip');
+        tooltip.innerHTML += '<button class="js-Tooltip-close">close</button>';
 
         document.body.appendChild(tooltip);
 
@@ -39,10 +40,11 @@ Tooltip = function(options) {
         positionAt(e.target, tooltip, posHorizontal, posVertical);
     });
 
-    document.body.addEventListener("mouseout", function(e) {
-        if (e.target.hasAttribute('data-tooltip')) {
+    document.body.addEventListener("click", function(e) {
+        console.log(e.target.classList)
+        if (e.target.classList.value.indexOf('js-Tooltip-close') > -1) {
             setTimeout(function() {
-                document.body.removeChild(document.querySelector(".b-tooltip"));
+                document.body.removeChild(document.querySelector(".js-Tooltip"));
             }, delay);
         }
     });
@@ -58,8 +60,6 @@ Tooltip = function(options) {
      */
     function positionAt(parent, tooltip, posHorizontal, posVertical) {
         var parentCoords = parent.getBoundingClientRect(), left, top;
-
-        console.log(posVertical)
 
         switch (posHorizontal) {
             case "left":

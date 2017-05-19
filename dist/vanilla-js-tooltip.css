@@ -1,0 +1,29 @@
+.js-Tooltip {
+  background: #242424;
+  background: linear-gradient(to bottom, #6e6e6e 0%, #242424 100%);
+  border-radius: 5px;
+  color: #fff;
+  display: inline-block;
+  font-size: .875em;
+  padding: .75em;
+  position: absolute;
+  text-align: center;
+}
+body {
+  font-family: sans-serif;
+  height: 2000px;
+}
+span {
+  background: #ffe4e1;
+  border: 2px dotted #c00;
+  cursor: default;
+  display: inline-block;
+  padding: 5px;
+}
+img {
+  display: block;
+}
+.wrap {
+  margin: 0 auto;
+  width: 800px;
+}
